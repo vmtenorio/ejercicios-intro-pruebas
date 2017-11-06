@@ -1,0 +1,29 @@
+NumZero
+
+
+1.
+Está mal porque el bucle empieza en 1 en lugar de en 0, por lo que se salta el primer elemento del array.
+
+2.
+Para que no ejecute el código del fallo deberíamos hacer que no entre en el método de contar 0s, lo cual es imposible. En cuanto entra a ese método y su bucle, ya ejecuta el código con el fallo.
+
+3.
+No es posible que no haya error en el estado, pues al empezar en 1 el contador, el estado ya en ese momento es erróneo, y esto no es recuperable.
+
+4.
+int arr[] = {2, 7, 0};
+Este caso no provoca el fallo, pues no tiene un 0 en el primer elemento, pero si provoca un error en el estado, pues este es erróneo siempre que entra en el bucle.
+
+5.
+El primer estado erróneo es cuando la variable de control del bucle (i) vale 1 y no 0, como debería valer. El resto (contador de programa, etc) está bien, pues en el estado correcto estaría en la misma instrucción el PC y el resto de variables tendrían el mismo valor.
+
+6.
+java -cp .:../junit-4.12.jar:../hamcrest-core-1.3.jar AllTests
+..
+Time: 0.009
+
+OK (2 tests)
+
+Simplemente cambiando el 1 del inicio del bucle por un 0: for (int i = 0; i < x.length; i++).
+
+

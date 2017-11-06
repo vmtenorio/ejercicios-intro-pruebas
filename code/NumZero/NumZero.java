@@ -11,7 +11,7 @@ public class NumZero
    {  
       int count = 0;
    
-      for (int i = 1; i < x.length; i++)
+      for (int i = 0; i < x.length; i++)
       {
          if (x[i] == 0) count++;
       }
