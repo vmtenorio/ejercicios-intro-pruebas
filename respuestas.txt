@@ -85,3 +85,32 @@ Time: 0.009
 OK (1 test)
 Cambiando el > por un >=.
 for (int i=x.length-1; i >= 0; i--)
+
+
+
+LastZero
+
+1.
+El fallo es que tiene que encontrar el índice del último 0, pero el bucle empieza por el índice 0. Debería empezar por el final e ir hacia abajo.
+
+2.
+En cuanto entra al método lastZero y entra al bucle, ya ahí ejecuta el código con el fallo.
+
+3.
+En el momento que entra al bucle, va a haber error en el estado, pues su variable de control debería valer la longitud del array -1, y va a valer 0.
+
+4.
+Esto se podría producir si solo hay un 0 en el array, pues la posición de éste es la del último 0, por lo que el resultado estará bien, o si no hay 0s en el array, que devolverá -1. En ambos casos el estado sería erróneo.
+
+5.
+El primer error en el estado es a la hora de entrar en el bucle, cuando la variable de control del mismo debería valer la longitud de x -1 y vale 0.
+
+6.
+java -cp .:../junit-4.12.jar:../hamcrest-core-1.3.jar AllTests
+.
+Time: 0.009
+
+OK (1 test)
+Cambiar la sentencia del bucle por:
+for (int i = x.length-1; i >= 0; i--)
+

@@ -10,7 +10,7 @@ public class LastZero
    */
    public static int lastZero (int[] x)
    {
-      for (int i = 0; i < x.length; i++)
+      for (int i = x.length-1; i >= 0; i--)
       {
          if (x[i] == 0)
          {
