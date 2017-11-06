@@ -15,7 +15,7 @@ public class OddOrPos
    
       for (int i = 0; i < x.length; i++)
       {
-         if (x[i]%2 == 1 || x[i] > 0)
+         if (x[i]%2 == 1 || x[i] > 0 || x[i]%2 == -1)
          {
             count++;
          }
