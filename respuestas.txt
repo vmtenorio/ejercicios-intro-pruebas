@@ -27,3 +27,30 @@ OK (2 tests)
 Simplemente cambiando el 1 del inicio del bucle por un 0: for (int i = 0; i < x.length; i++).
 
 
+
+CountPositive
+
+1.
+El fault es que tenemos que cuente si x es mayor o igual a 0, cuando si es igual a 0 no debería contarlo como positivo. Habría que cambiar el >= por un >.
+
+2.
+En cuanto entra al método de contar positivos va a ejecutar el código que tiene el fallo (la sentencia del >=), por lo que es imposible que no ejecute esa parte del código
+
+3.
+En cuanto encuetra un 0, la variable count va a estar mal, pues va a contar uno más de los que verdaderamente hay. Por lo tanto, si no hay 0s, va a ejecutar la parte incorrecta, pero no va a influir en el estado del programa, pues count va a tener el valor correcto.
+
+4.
+Aquí es imposible provocar fallo sin influir en el estado del programa, pues si no hay 0s el programa funciona bien, pero si hay alguno va a funcionar mal y el estado será incorrecto.
+
+5.
+El primer estado erróneo es cuando aparece el primer 0, y count pasa a valer 1 más de lo que debería.
+
+6.
+va -cp .:../junit-4.12.jar:../hamcrest-core-1.3.jar AllTests
+.
+Time: 0.01
+
+OK (1 test)
+Simplemente cambiando el >= Por un >
+if (x[i] > 0)
+
